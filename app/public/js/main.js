@@ -5,10 +5,20 @@ requirejs.config({
 });
 require(["jquery", "jquery-ui", "lib/jquery.isotope"], function($) {
 	$(function() {
+
+		require(["rsscontent"], function(rss) {
+			$('.feedContent').each(function(index, frame) {
+				// Iterate on the feeds to fill with items
+				rss.getRssFeed($(this), $(this).attr('name'));
+			}).draggable({
+				axis : "y",
+			});
+		});
+
 		$('img.vimeo').each(function() {
 			var imgElt = $(this);
-			$.getJSON("http://vimeo.com/api/v2/video/" + imgElt.attr('vimeo') + ".json", function(data) {
-				imgElt.attr('src',data.thumbnail_large);
+			$.getJSON("http://vimeo.com/api/v2/video/" + imgElt.attr('vimeo') + ".json?callback=?", function(data) {
+				imgElt.attr('src', data[0].thumbnail_large);
 			});
 		});
 
@@ -16,7 +26,6 @@ require(["jquery", "jquery-ui", "lib/jquery.isotope"], function($) {
 			// options
 			itemSelector : '.item',
 			masonry : {
-
 			}
 		}).draggable({
 			axis : "y",
