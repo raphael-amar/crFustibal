@@ -39,15 +39,23 @@ body {
 }
 .entry > h2 {
   font-size: 130%;
-  font-weight: 500;
+  font-weight: 600;
+  color: #6c7065;
+  padding: 16px;
+  text-align: center;
 }
 .entry > .description {
   font-size: 100%;
   font-weight: 300;
+  padding: 16px;
+  text-align: justify;
 }
 .entry > .feedImg {
   height: auto;
   min-width: 280px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .video,
 .video.activate {
@@ -64,25 +72,19 @@ body {
   height: 592px;
 }
 .item > h1 {
+  position: absolute;
   color: #e3e6d9;
   font-size: 16pt;
   font-weight: 500;
   background-color: #514d3e;
   padding: 6px 12px 6px 12px;
-  z-index: 50;
+  z-index: 5;
+  width: 100%;
 }
-.local > h1 {
-  background-color: #6c7065;
-}
-.extern > h1 {
-  background-color: #6c7065;
-}
-.news > h1 {
-  background-color: #6c7065;
-}
-.video > h1 {
-  background-color: #6c7065;
-}
+.local > h1,
+.extern > h1,
+.news > h1,
+.video > h1,
 .badge > h1 {
   background-color: #6c7065;
 }
@@ -116,7 +118,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -10;
+  z-index: 1;
 }
 .item > .details {
   background-color: #6c7065;
@@ -130,6 +132,7 @@ body {
   -webkit-box-sizing: border-box;
   display: none;
   z-index: 10;
+  text-align: justify;
 }
 #bar {
   width: 100%;

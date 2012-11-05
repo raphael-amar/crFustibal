@@ -39,6 +39,22 @@ var data = {
 		"url" : "http://montpellier.territoirenumerique.org/feed/",
 		"type" : "news"
 	}, {
+		"title" : "Fugue / Trampoline > Cie Yoann Bourgeois",
+		"headline" : "Ce fut le grand succès de la 2ème ZAT - Zone Artistique Temporaire, en avril 2011 à Montpellier, et sans doute un des plus beaux spectacles de l'année : Fugue / Trampoline, de Yoann Bourgeois. Une petite danse spectaculaire de 4'30.",
+		"type" : "video",
+		"vimeo" : "25168181"
+	}, {
+		"title" : "Production éléctrique de la mairie",
+		"headline" : "Suivi temps réel de la production des panneaux solaires de la mairie",
+		"url" : "/rrCintamani/parquartier.html",
+		"type" : "badge",
+		"logo" : "img/bdg_kwh.png"
+	}, {
+		"title" : "OpenData Blog",
+		"headline" : "Le partage et la réutilisation des données publiques conditionnent l’émergence d’une telle dynamique d’innovation dans les services aux citoyens et aux entreprises.",
+		"url" : "http://opendata.montpelliernumerique.fr/?page=rss&type=blog",
+		"type" : "news"
+	}, {
 		"title" : "Les Clés d'Antigone",
 		"headline" : "Webdocumentaire réalisé pour les 30 ans du quartier Antigone",
 		"type" : "video",
@@ -47,11 +63,6 @@ var data = {
 		"title" : "Espace de travail collaboratif Montpellierain",
 		"headline" : "L’EspaceCo Montpellier est une initiative portée par La Ville de Montpellier et des acteurs engagés dans l’innovation sociale et numérique. Hébergé par Kawenga, il est animé par un équipe multi-disciplinaire : Designers (DavidONet), Associations (CartoClic), Indépendants (Marie-Laure VIE…), Etudiants (Gilles MARC..) et Chercheurs (LIRMM).",
 		"url" : "http://www.espaceco-montpellier.fr/feed/",
-		"type" : "news"
-	}, {
-		"title" : "OpenData Blog",
-		"headline" : "Le partage et la réutilisation des données publiques conditionnent l’émergence d’une telle dynamique d’innovation dans les services aux citoyens et aux entreprises.",
-		"url" : "http://opendata.montpelliernumerique.fr/?page=rss&type=blog",
 		"type" : "news"
 	}]
 };
