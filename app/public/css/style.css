@@ -1,0 +1,131 @@
+@import "reset.css";
+
+@import "isotope.css";
+
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600";
+body {
+  font: 14px "Open Sans", Helvetica, Arial, sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+#content {
+  -webkit-transition: 0.25s opacity;
+  background-color: #514d3e;
+  background: -webkit-radial-gradient(rgba(160, 160, 160, 0.5), rgba(140, 140, 140, 0.5) 35%, rgba(100, 100, 100, 0.7));
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+#container {
+  top: 24px;
+  left: 24px;
+}
+.item {
+  background-color: #e3e6d9;
+  margin: 16px;
+  width: 280px;
+  height: 280px;
+}
+.news,
+.news.activate {
+  width: 592px;
+  height: 904px;
+}
+.video,
+.video.activate {
+  width: 904px;
+  height: 592px;
+}
+.badge,
+.badge.activate {
+  width: 592px;
+  height: 280px;
+}
+.activate {
+  width: 592px;
+  height: 592px;
+}
+.item > h1 {
+  color: #e3e6d9;
+  font-size: 16pt;
+  font-weight: 500;
+  background-color: #514d3e;
+  padding: 6px 12px 6px 12px;
+}
+.local > h1 {
+  background-color: #6c7065;
+}
+.extern > h1 {
+  background-color: #6c7065;
+}
+.news > h1 {
+  background-color: #6c7065;
+}
+.video > h1 {
+  background-color: #6c7065;
+}
+.badge > h1 {
+  background-color: #6c7065;
+}
+.item > .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  opacity: 1;
+  max-width: 100%;
+  max-height: 100%;
+}
+.item > svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  opacity: .8;
+  max-width: 100%;
+  max-height: 100%;
+}
+.item > iframe {
+  border: 0;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}
+.item > .details {
+  background-color: #6c7065;
+  color: #e3e6d9;
+  font-size: 12pt;
+  font-weight: 300;
+  padding: 12px;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  display: none;
+  z-index: 10;
+}
+#bar {
+  width: 100%;
+  background-color: #6c7065;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 48px;
+  padding: 8px;
+  -webkit-box-sizing: border-box;
+}
+.icon {
+  position: relative;
+  fill: #c4c8c5;
+  stroke: none;
+  width: 64px;
+}

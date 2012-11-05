@@ -1,0 +1,169 @@
+@import "reset.css";
+@import "isotope.css";
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600";
+
+body {
+  font: 14px "Open Sans", Helvetica, Arial, sans-serif;
+      -webkit-touch-callout: none;
+-webkit-user-select: none;
+  }
+
+
+@c1:#E3E6D9;
+@c2:#C4C8C5;
+@c3:#92A298;
+@c4:#6C7065;
+@c5:#514D3E;
+
+#content{
+-webkit-transition: 0.25s opacity;
+background-color:@c5;
+  background: -webkit-radial-gradient(rgba(160, 160, 160, 0.5),
+                                      rgba(140, 140, 140, 0.5) 35%,
+                                      rgba(100, 100, 100, 0.7));
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  position:fixed;
+}
+
+
+
+
+#container
+{
+  top:24px;
+  left:24px;
+}
+
+@iw:280px;
+@ih:280px;
+@im:16px;
+
+.item{       
+  background-color:@c1;
+  margin:@im;
+  width:@iw;
+  height:@ih;
+ // -webkit-box-shadow: 1px 1px 10px #aaa;
+}
+
+.news,.news.activate{
+  width:(2*@iw+2*@im);
+ height:(3*@iw+4*@im);
+}
+
+.video,.video.activate{
+ width:(3*@iw+4*@im);
+  height:(2*@ih+2*@im);
+}
+
+.badge,.badge.activate{
+  width:(2*@iw+2*@im);
+  height:@ih;
+}
+
+
+.activate{
+  width:(2*@iw+2*@im);
+  height:(2*@ih+2*@im);
+}
+
+
+.item>h1{
+  color:@c1;
+  font-size:16pt;
+  font-weight:500;
+  background-color:@c5;
+  padding:6px 12px 6px 12px;
+  }
+  
+.local>h1{
+  background-color:@c4;
+}  
+  
+.extern>h1{
+  background-color:@c4;
+}  
+
+.news>h1{
+  background-color:@c4;
+}  
+
+.video>h1{
+  background-color:@c4;
+}  
+
+.badge>h1{
+  background-color:@c4;
+}  
+
+
+
+.item>.bg{
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index:-10;
+   opacity: 1;
+   max-width:100%;
+   max-height:100%;
+}
+
+.item > svg{
+  position: absolute;
+  width:100%;
+   height:100%;
+      top: 0;
+   left: 0;
+   z-index:-10;
+   opacity: .8;
+   max-width:100%;
+   max-height:100%;
+}
+
+
+.item>iframe{
+   border:0;
+   max-width:100%;
+   max-height:100%;
+   width:100%;
+   height:100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index:-10;
+}
+
+.item>.details{
+  background-color:@c4;
+  color:@c1;
+  font-size:12pt;
+  font-weight:300; 
+  padding:12px;
+  bottom:0;
+  position:absolute;
+  width:100%;
+   -webkit-box-sizing: border-box;
+  display:none;
+  z-index:10;
+  }
+
+#bar{
+   width:100%;
+   background-color:@c4;
+   position:fixed;
+   bottom:0;
+   right:0;
+   height:48px;
+   padding:8px;
+   -webkit-box-sizing: border-box;
+}
+
+.icon{
+  position:relative;
+  fill:@c2;
+  stroke:none;
+  width:64px;
+}
