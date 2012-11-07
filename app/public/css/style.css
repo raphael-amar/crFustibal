@@ -28,6 +28,7 @@ body {
   width: 280px;
   height: 280px;
   overflow: hidden;
+  -webkit-box-shadow: 1px 1px 10px #aaa;
 }
 .news,
 .news.activate {
@@ -43,6 +44,10 @@ body {
   color: #6c7065;
   padding: 16px;
   text-align: center;
+}
+a {
+  text-decoration: none;
+  color: #e3e6d9;
 }
 .entry > .description {
   font-size: 100%;

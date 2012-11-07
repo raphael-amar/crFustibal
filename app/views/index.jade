@@ -5,7 +5,11 @@ block content
 		div#container
 			for i in apps
 				div.item(class='#{i.type}')
-					h1 #{i.title}
+					if i.type=='extern'
+						h1 
+							a(href='#{i.url}') #{i.title}
+					else
+						h1 #{i.title}
 					p.details #{i.headline}		
 					if i.logo
 						img.bg(src='#{i.logo}')

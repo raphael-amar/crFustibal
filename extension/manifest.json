@@ -6,8 +6,7 @@
 	},
 	"permissions": ["webRequest", "tabs", "http://*/*"],
 	"browser_action": {
-		"name": "Rongo Rongo Extension",
-		"icons": ["icon.png"]
+		"name": "Rongo Rongo Extension"
 	},
 	 "content_scripts" : [{
         "matches" : [ "http://*/*","https://*/*"],
