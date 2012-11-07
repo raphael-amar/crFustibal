@@ -36,7 +36,7 @@ var data = {
 	}, {
 		"title" : "MTN Blog",
 		"headline" : "Ce programme a comme ambition d’affirmer la ville comme une collectivité engagée dans l’innovation sociale, en tirant parti de la puissance du numérique et en s’appuyant sur de nouvelles formes de co-production (ascendante, participative).",
-		"url" : "http://montpellier.territoirenumerique.org/feed/",
+		"rss" : "http://montpellier.territoirenumerique.org/feed/",
 		"type" : "news"
 	}, {
 		"title" : "Fugue / Trampoline > Cie Yoann Bourgeois",
@@ -46,13 +46,12 @@ var data = {
 	}, {
 		"title" : "Production éléctrique de la mairie",
 		"headline" : "Suivi temps réel de la production des panneaux solaires de la mairie",
-		"url" : "/rrCintamani/parquartier.html",
 		"type" : "badge",
 		"logo" : "img/bdg_kwh.png"
 	}, {
 		"title" : "OpenData Blog",
 		"headline" : "Le partage et la réutilisation des données publiques conditionnent l’émergence d’une telle dynamique d’innovation dans les services aux citoyens et aux entreprises.",
-		"url" : "http://opendata.montpelliernumerique.fr/?page=rss&type=blog",
+		"rss" : "http://opendata.montpelliernumerique.fr/?page=rss&type=blog",
 		"type" : "news"
 	}, {
 		"title" : "Les Clés d'Antigone",
@@ -62,7 +61,12 @@ var data = {
 	}, {
 		"title" : "Espace de travail collaboratif Montpellierain",
 		"headline" : "L’EspaceCo Montpellier est une initiative portée par La Ville de Montpellier et des acteurs engagés dans l’innovation sociale et numérique. Hébergé par Kawenga, il est animé par un équipe multi-disciplinaire : Designers (DavidONet), Associations (CartoClic), Indépendants (Marie-Laure VIE…), Etudiants (Gilles MARC..) et Chercheurs (LIRMM).",
-		"url" : "http://www.espaceco-montpellier.fr/feed/",
+		"rss" : "http://www.espaceco-montpellier.fr/feed/",
+		"type" : "news"
+	}, {
+		"title" : "LABSud Fablab",
+		"headline" : "le Fablab de Montpellier",
+		"rss" : "http://www.scoop.it/t/labsud-fablab-a-montpellier/rss.xml	",
 		"type" : "news"
 	}]
 };

@@ -79,5 +79,25 @@ require(["jquery", "jquery-ui", "lib/jquery.isotope", 'froog'], function($) {
 			});
 			$('.details').fadeOut();
 		});
+		$("#refresh").click(function() {
+			$('#container').isotope({
+				filter : ''
+			});
+		})
+		$("#sortnews").click(function() {
+			$('#container').isotope({
+				filter : '.news'
+			});
+		});
+		$("#sortextern").click(function() {
+			$('#container').isotope({
+				filter : '.extern'
+			});
+		});
+		$("#sortvideo").click(function() {
+			$('#container').isotope({
+				filter : '.video'
+			});
+		});
 	});
 });

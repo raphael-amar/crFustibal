@@ -1,5 +1,5 @@
 {
-	"name": "An extension to add a home button on all pages.",
+	"name": "Rongo Rongo Extension",
 	"version": "1.0",
 	"background": {
 		"scripts": ["background.js"]
