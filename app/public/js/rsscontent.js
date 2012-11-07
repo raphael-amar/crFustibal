@@ -77,7 +77,7 @@ define([], function() {
 					var title = $item.find('title').text();
 					// grab the post's URL
 
-					var description = $item.find('description').text();
+					var description = $item.find('description').text().replace("<![CDATA[", "").replace("]]>", "");
 					var img = " ";
 					try {
 						var content = $item.children('content\\:encoded').text();
