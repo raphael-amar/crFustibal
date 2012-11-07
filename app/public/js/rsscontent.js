@@ -77,29 +77,30 @@ define([], function() {
 					var title = $item.find('title').text();
 					// grab the post's URL
 
-					var description = $item.find('description').text().replace("<![CDATA[", "").replace("]]>", "");
+					var description;
+					// = $item.find('description').text().replace("<![CDATA[", "").replace("]]>", "");
 					var img = " ";
-					try {
-						var content = $item.children('content\\:encoded').text();
-						var contentNorm = $(content.replace("<![CDATA[", "").replace("]]>", ""));
-						var imgElt = contentNorm.find('img')[0];
-						// Get the first image in the content
-						if (imgElt) {
-							imgElt.setAttribute('class', '');
-							imgElt.setAttribute('class', 'feedImg');
-							img = imgElt.outerHTML;
-							// Doesn't work with firefox :-() for CORS reason
-						}
-					} catch(err) {
-						console.log("pb with img search" + err);
-					}
+					var content = $item.children('content\\:encoded').text();
+					var contentNorm = $(content.replace("<![CDATA[", "").replace("]]>", ""));
+					description = content.replace("<![CDATA[", "").replace("]]>", "");
+					contentNorm.find('img').each(function(i,e) {						
+						e.setAttribute('class', 'feedImg')
+						e.removeAttribute('style');
+					});
+					contentNorm.find('p,span,div,h1,h2,h3,h4,ul,li').each(function(i,e) {						
+						e.removeAttribute('class');
+						e.removeAttribute('style');
+					});
+					
 
 					var pubDate = $item.find('pubDate').text();
 					var aDiv = $(document.createElement("div")).addClass('entry');
 					$(document.createElement("h2")).addClass('postTitle').append(title).appendTo(aDiv);
 					//$(document.createElement("em")).addClass('date').append(pubDate).appendTo(aDiv);
-					aDiv.append(img);
-					$(document.createElement("p")).addClass('description').append(description).appendTo(aDiv);
+					//aDiv.append(img);
+					console.log(description);
+					var desc = $(document.createElement("div")).addClass('description').appendTo(aDiv);
+					$(desc).html(contentNorm);
 
 					$(document.createElement("hr")).appendTo(aDiv);
 					//put that feed content on the screen!

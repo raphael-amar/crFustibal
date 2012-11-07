@@ -11,6 +11,9 @@ require(["jquery", "jquery-ui", "lib/jquery.isotope", 'froog'], function($) {
 			$('.feedContent').each(function(index, frame) {
 				// Iterate on the feeds to fill with items
 				rss.getRssFeed($(this), $(this).attr('name'));
+				$(this).animate({
+					top : 34
+				});
 			}).draggable({
 				axis : "y",
 				stop : function(event, ui) {

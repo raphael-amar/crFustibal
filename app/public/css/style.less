@@ -61,9 +61,38 @@ body {
     text-align: center;
 }
 
-a {
+ul{
+    list-style-type: square;
+     margin-left:32px;
+     margin-right:32px;
+     margin-top:0;
+     margin-bottom:8px;
+}
+
+h1 > a {
     text-decoration: none;
     color: @c1;
+}
+
+.description > p{
+    margin:8px;
+}
+
+h2,h3,h4{
+    font-size: 105%;
+    font-weight: 600;
+    color: @c5;
+}
+strong{
+    text-decoration: none;
+        color: @c5;
+    font-weight: 600;
+}
+
+.description > p > a {
+    text-decoration: none;
+    color: @c5;
+    font-weight: 400;
 }
 
 .entry > .description {
@@ -73,12 +102,15 @@ a {
     text-align: justify;
 }
 
-.entry > .feedImg {
+.feedImg {
     height: auto;
     min-width: @iw;
+    max-width: 2*@iw - @im;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    float:none;
+    
 }
 
 .video, .video.activate {

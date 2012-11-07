@@ -63,11 +63,6 @@ var data = {
 		"headline" : "L’EspaceCo Montpellier est une initiative portée par La Ville de Montpellier et des acteurs engagés dans l’innovation sociale et numérique. Hébergé par Kawenga, il est animé par un équipe multi-disciplinaire : Designers (DavidONet), Associations (CartoClic), Indépendants (Marie-Laure VIE…), Etudiants (Gilles MARC..) et Chercheurs (LIRMM).",
 		"rss" : "http://www.espaceco-montpellier.fr/feed/",
 		"type" : "news"
-	}, {
-		"title" : "LABSud Fablab",
-		"headline" : "le Fablab de Montpellier",
-		"rss" : "http://www.scoop.it/t/labsud-fablab-a-montpellier/rss.xml	",
-		"type" : "news"
 	}]
 };
 exports.index = function(req, res) {

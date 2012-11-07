@@ -45,9 +45,36 @@ body {
   padding: 16px;
   text-align: center;
 }
-a {
+ul {
+  list-style-type: square;
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+h1 > a {
   text-decoration: none;
   color: #e3e6d9;
+}
+.description > p {
+  margin: 8px;
+}
+h2,
+h3,
+h4 {
+  font-size: 105%;
+  font-weight: 600;
+  color: #514d3e;
+}
+strong {
+  text-decoration: none;
+  color: #514d3e;
+  font-weight: 600;
+}
+.description > p > a {
+  text-decoration: none;
+  color: #514d3e;
+  font-weight: 400;
 }
 .entry > .description {
   font-size: 100%;
@@ -55,12 +82,14 @@ a {
   padding: 16px;
   text-align: justify;
 }
-.entry > .feedImg {
+.feedImg {
   height: auto;
   min-width: 280px;
+  max-width: 544px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  float: none;
 }
 .video,
 .video.activate {
