@@ -13,6 +13,19 @@ require(["jquery", "jquery-ui", "lib/jquery.isotope", 'froog'], function($) {
 				rss.getRssFeed($(this), $(this).attr('name'));
 			}).draggable({
 				axis : "y",
+				stop : function(event, ui) {
+					if (34 < ui.position.top) {
+						$(this).animate({
+							top : 34
+						});
+					}
+					if (ui.position.top < -$(this).height() + 904) {
+						$(this).animate({
+							top : -$(this).height() + 904
+						});
+					}
+
+				}
 			});
 		});
 
@@ -45,6 +58,18 @@ require(["jquery", "jquery-ui", "lib/jquery.isotope", 'froog'], function($) {
 			}
 		}).draggable({
 			axis : "y",
+			stop : function(event, ui) {
+				if (0 < ui.position.top) {
+					$(this).animate({
+						top : 0
+					});
+				}
+				if (ui.position.top < -$(this).height() + $(window).height()) {
+					$(this).animate({
+						top : -$(this).height() + $(window).height()
+					});
+				}
+			}
 		});
 		$('.item').dblclick(function() {
 			if ($(this).hasClass('activate')) {
