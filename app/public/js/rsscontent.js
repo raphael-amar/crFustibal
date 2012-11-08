@@ -98,7 +98,6 @@ define([], function() {
 					$(document.createElement("h2")).addClass('postTitle').append(title).appendTo(aDiv);
 					//$(document.createElement("em")).addClass('date').append(pubDate).appendTo(aDiv);
 					//aDiv.append(img);
-					console.log(description);
 					var desc = $(document.createElement("div")).addClass('description').appendTo(aDiv);
 					$(desc).html(contentNorm);
 
