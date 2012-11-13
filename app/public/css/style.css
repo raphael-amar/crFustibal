@@ -3,15 +3,15 @@
 @import "isotope.css";
 
 @import "http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600";
+
+@import "http://fonts.googleapis.com/css?family=Quicksand:300,400";
 body {
-  font: 14px "Open Sans", Helvetica, Arial, sans-serif;
+  font: 16px "Open Sans", Helvetica, Arial, sans-serif;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
 }
 #content {
-  -webkit-transition: 0.25s opacity;
   background-color: #514d3e;
-  background: -webkit-radial-gradient(rgba(160, 160, 160, 0.5), rgba(140, 140, 140, 0.5) 35%, rgba(100, 100, 100, 0.7));
   top: 0;
   left: 0;
   width: 100%;
@@ -19,8 +19,9 @@ body {
   position: fixed;
 }
 #container {
-  top: 24px;
-  left: 24px;
+  top: 0;
+  left: 0;
+  background-image: url('/img/fb1.jpg');
 }
 .item {
   background-color: #e3e6d9;
@@ -110,9 +111,10 @@ strong {
   height: 592px;
 }
 .item > h1 {
+  font-family: "QuickSand", Helvetica, Arial, sans-serif;
   position: absolute;
   color: #e3e6d9;
-  font-size: 16pt;
+  font-size: 20pt;
   font-weight: 500;
   background-color: #514d3e;
   padding: 6px 12px 6px 12px;
