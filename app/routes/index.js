@@ -5,7 +5,7 @@
 var data = {
 	"apps" : [{
 		"title" : "Zooomez",
-		"headline" : "Le projet ZooomeZ a été initié en 2009 par trois passionnés d’image, de technologie et d’Internet. Son objectif est de valoriser des sites présentant un intérêt patrimonial à travers des médias diversifiés et qualitatifs.",
+		"headline" : "L'objectif de ZooomeZ est de valoriser des sites présentant un intérêt patrimonial à travers des médias diversifiés et qualitatifs.",
 		"url" : "http://zooomez.fr/carte/mairie",
 		"type" : "extern",
 		"logo" : "img/ext_zoomez.png"

@@ -37,8 +37,6 @@ define([], function() {
 				$('#container').isotope('reLayout');
 			});
 		}
-		$(this).children('.details').toggle(500);
-
 	});
 	$('#collapse').click(function() {
 		var nbi = $('.item').length
