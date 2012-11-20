@@ -20,4 +20,13 @@ define(["rsscontent"], function(rss) {
 			}
 		}
 	});
-}); 
+	function scrollFeed() {
+		var entries = $('.entry');
+		var entry = entries[Math.floor(Math.random() * entries.length)];
+		$(entry).parent().animate({
+			top: 64-$(entry).position().top
+		},10000);
+		setTimeout(scrollFeed, 20000);
+	}
+	setTimeout(scrollFeed, 10000);
+});

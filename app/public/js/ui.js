@@ -2,7 +2,8 @@ define([], function() {
 	$('#container').isotope({
 		// options
 		itemSelector : '.item',
-		masonry : {
+		mansory : {
+			columnWidth:280
 		}
 	}).draggable({
 		axis : "y",
@@ -19,7 +20,7 @@ define([], function() {
 			}
 		}
 	});
-	$('.item').dblclick(function() {
+	$('.item').click(function() {
 		if ($(this).hasClass('activate')) {
 			$(this).switchClass("activate", "", 500, function() {
 				$('#container').isotope('reLayout');

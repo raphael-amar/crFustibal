@@ -20,13 +20,12 @@ define(["lib/jquery.flot.navigate"], function() {
 					minTickSize : [1, "day"],
 					min : last,
 					max : end,
-					panRange : [0, end]
+					panRange : [0, end],
 				},
 				pan : {
 					interactive : true
 				},
 				yaxis : {
-					zoomRange : null,
 					panRange : [0, 11],
 					min : 0,
 					max : 11,
