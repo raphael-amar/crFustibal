@@ -39,7 +39,7 @@ body {
     margin: @im;
     width: @iw;
     height: @ih;
-    overflow: hidden;//
+    overflow: hidden;
     -webkit-box-shadow: 1px 1px 10px #aaa;
 }
 
@@ -124,6 +124,13 @@ strong{
 .badge, .badge.activate {
     width: (2*@iw+2*@im);
     height: @ih;
+}
+
+.inbadge
+{
+    margin-top:(4*@im);
+    width: (2*@iw+2*@im);
+    height: (@ih - 4*@im);
 }
 
 .activate {

@@ -22,11 +22,10 @@ var data = {
 		"type" : "extern",
 		"logo" : "img/ext_clameur.png"
 	}, {
-		"title" : "Météo",
-		"headline" : "Exploration des animaux du Zoo du Lunaret",
-		"url" : "/rrCintamani/parquartier.html",
+		"title" : "Air LR",
+		"headline" : "Indice de la qualité de l'air à Montpellier",
 		"type" : "badge",
-		"logo" : "img/bdg_meteo.png"
+		"id": "airlr"
 	}, {
 		"title" : "Zoo",
 		"headline" : "Exploration des animaux du Zoo du Lunaret",
