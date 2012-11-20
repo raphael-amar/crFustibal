@@ -2,9 +2,10 @@ define(["lib/jquery.flot.threshold"], function() {
 	$.getJSON('data/airlr.json', function(data) {
 
 		var last = new Date();
-		last.setDate(last.getDate() - 15);
+		last.setDate(last.getDate() - 20);
 		$.plot($('#airlr'), [{
 			data : data.data,
+			color : "rgb(72,120,168)",
 			bars : {
 				show : true,
 				barWidth : 20 * 60 * 60 * 1000,
