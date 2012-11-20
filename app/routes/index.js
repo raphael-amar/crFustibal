@@ -57,11 +57,6 @@ var data = {
 		"headline" : "Ce fut le grand succès de la 2ème ZAT - Zone Artistique Temporaire, en avril 2011 à Montpellier, et sans doute un des plus beaux spectacles de l'année : Fugue / Trampoline, de Yoann Bourgeois. Une petite danse spectaculaire de 4'30.",
 		"type" : "video",
 		"vimeo" : "25168181"
-	},{
-		"title" : "Espace de travail collaboratif Montpellierain",
-		"headline" : "L’EspaceCo Montpellier est une initiative portée par La Ville de Montpellier et des acteurs engagés dans l’innovation sociale et numérique. ",
-		"rss" : "http://www.espaceco-montpellier.fr/feed/",
-		"type" : "news"
 	}]
 };
 exports.index = function(req, res) {
