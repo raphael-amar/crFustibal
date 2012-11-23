@@ -61,7 +61,7 @@ define(["lib/jquery.flot.navigate", "lib/jQueryRotate.min", 'lib/jgauge'], funct
 		$(document.createElement("div")).addClass('jgauge').attr("id", "gaugeDay").appendTo($('#hdpv'));
 		var gaugeDay = new jGauge();
 		gaugeDay.id = 'gaugeDay';
-		gaugeDay.label.suffix = 'W / j';
+		gaugeDay.label.suffix = 'Wj';
 		gaugeDay.ticks.start = 0;
 		gaugeDay.ticks.end = 500000;
 		gaugeDay.range.thickness = 0;
