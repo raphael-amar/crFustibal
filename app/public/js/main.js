@@ -1,7 +1,7 @@
 requirejs.config({
 	paths : {
 		'jquery-ui' : 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min',
-		'froog' : 'http://a.vimeocdn.com/js/froogaloop2.min'
+		'froog' : 'http://a.vimeocdn.com/js/froogaloop2.min',
 	}
 });
 require(["jquery", "jquery-ui", "lib/jquery.isotope", 'froog', "lib/jquery.flot"], function($) {
@@ -9,6 +9,8 @@ require(["jquery", "jquery-ui", "lib/jquery.isotope", 'froog', "lib/jquery.flot"
 		require(["ui"]);
 		require(["news"]);
 		require(["vimeo"]);
-		require(["badge"]);
+		require(["badge"], function(badge) {
+			badge.init();
+		});
 	});
 });

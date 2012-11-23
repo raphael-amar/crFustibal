@@ -20,10 +20,10 @@ var data = {
 		"type" : "badge",
 		"id" : "airlr"
 	}, {
-		"title" : "Production éléctrique de la mairie",
-		"headline" : "Suivi temps réel de la production des panneaux solaires de la mairie",
+		"title" : "Centrale Photovoltaïque de l'Hotel de Ville",
+		"headline" : "Rayonnement solaire, production instantanée et journalière",
 		"type" : "badge",
-		"logo" : "img/bdg_kwh.png"
+		"id" : "hdpv"
 	}, {
 		"title" : "OpenData Blog",
 		"headline" : "Le partage et la réutilisation des données publiques.",
