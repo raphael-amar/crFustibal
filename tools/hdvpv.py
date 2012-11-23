@@ -10,7 +10,7 @@ urls = (
 
 class getData:
     def GET(selfself,name):
-        data = urllib2.urlopen('http://hdv.bype.org/cgi-bin/coutFile.cgi?fileName=/tmp/sensordata.xml')
+        data = urllib2.urlopen('http://10.22.130.41/cgi-bin/coutFile.cgi?fileName=/tmp/sensordata.xml')
         dom = parse(data)
         values = dom.getElementsByTagName('value')
         d ={};
@@ -18,7 +18,7 @@ class getData:
         d[u'TOUT'] = int(values[1].firstChild.nodeValue)
         d[u'RAY'] = int(values[2].firstChild.nodeValue)
         
-        data = urllib2.urlopen('http://hdv.bype.org/cgi-bin/coutFile.cgi?fileName=/tmp/systemdata.xml')
+        data = urllib2.urlopen('http://10.22.130.41/cgi-bin/coutFile.cgi?fileName=/tmp/systemdata.xml')
         dom = parse(data)
         if dom.getElementsByTagName('dataAvailable')[0].firstChild.nodeValue == u'true':
             current = dom.getElementsByTagName('current')[0].childNodes
