@@ -80,7 +80,7 @@ define(["lib/jquery.flot.navigate", "lib/jQueryRotate.min", 'lib/jgauge'], funct
 					setTimeout(updateHDVPVData, 10000);
 				},
 				error : function(){
-					setTimeout(updateHDVPVData, 2000);
+					setTimeout(updateHDVPVData, 5000);
 				}
 			});
 
