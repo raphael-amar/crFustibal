@@ -1,5 +1,5 @@
-define(["lib/jquery.flot.navigate"], function() {
-	function updateData() {
+define(["lib/jquery.flot.navigate", "lib/jQueryRotate.min", 'lib/jgauge'], function() {
+	function updateAirLRData() {
 		$.getJSON('data/airlr.json', function(data) {
 			var last = new Date();
 			last.setDate(last.getDate() - 10);
@@ -33,9 +33,65 @@ define(["lib/jquery.flot.navigate"], function() {
 				}
 			});
 		});
-		setTimeout(updateData, 4 * 60 * 60 * 1000);
+		setTimeout(updateAirLRData, 4 * 60 * 60 * 1000);
 	}
 
-	updateData();
+	function initHDVPV() {
 
+		$(document.createElement("div")).addClass('jgauge').attr("id", "gaugeRay").appendTo($('#hdpv'));
+		var gaugeRay = new jGauge();
+		gaugeRay.id = 'gaugeRay';
+		gaugeRay.label.suffix = 'W / m2';
+		gaugeRay.ticks.start = 0;
+		gaugeRay.ticks.end = 500;
+		gaugeRay.range.thickness = 0;
+		gaugeRay.range.radius = 0;
+		gaugeRay.init();
+
+		$(document.createElement("div")).addClass('jgauge').attr("id", "gaugeTemp").appendTo($('#hdpv'));
+		var gaugeTemp = new jGauge();
+		gaugeTemp.id = 'gaugeTemp';
+		gaugeTemp.label.suffix = 'W';
+		gaugeTemp.ticks.start = 0;
+		gaugeTemp.ticks.end = 80000;
+		gaugeTemp.range.thickness = 0;
+		gaugeTemp.range.radius = 0;
+		gaugeTemp.init();
+
+		$(document.createElement("div")).addClass('jgauge').attr("id", "gaugeDay").appendTo($('#hdpv'));
+		var gaugeDay = new jGauge();
+		gaugeDay.id = 'gaugeDay';
+		gaugeDay.label.suffix = 'Wj';
+		gaugeDay.ticks.start = 0;
+		gaugeDay.ticks.end = 500000;
+		gaugeDay.range.thickness = 0;
+		gaugeDay.range.radius = 0;
+		gaugeDay.init();
+
+		updateHDVPVData();
+		function updateHDVPVData() {
+			$.ajax({
+				url : 'http://hdv.bype.org/hdpv.json',
+				dataType : 'json',
+				success : function(data) {
+					gaugeTemp.setValue(data.PAC);
+					gaugeRay.setValue(data.RAY);
+					gaugeDay.setValue(data.DAY_ENERGY);
+					setTimeout(updateHDVPVData, 10000);
+				},
+				error : function(){
+					setTimeout(updateHDVPVData, 5000);
+				}
+			});
+
+		}
+
+	}
+
+	return {
+		init : function() {
+			initHDVPV();
+			updateAirLRData();
+		}
+	};
 });
