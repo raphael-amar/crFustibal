@@ -6,11 +6,13 @@ requirejs.config({
 });
 require(["jquery", "jquery-ui", "lib/jquery.isotope", 'froog', "lib/jquery.flot"], function($) {
 	$(function() {
+
 		require(["ui"]);
 		require(["news"]);
 		require(["vimeo"]);
 		require(["badge"], function(badge) {
 			badge.init();
+			$('.item').show();
 		});
 	});
 });

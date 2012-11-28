@@ -42,6 +42,7 @@ body {
     height: @ih;
     overflow: hidden;
     -webkit-box-shadow: 1px 1px 10px #aaa;
+    display:none;
 }
 
 .news.activate {
@@ -168,7 +169,7 @@ strong{
     opacity: 1;
 }
 
-.item > svg, .item > img.vimeo {
+.item > svg, .item > video.vimeo {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -217,6 +218,7 @@ strong{
     height: 48px;
     padding: 8px;
     -webkit-box-sizing: border-box;
+    z-index:1000;
 }
 
 .icon {

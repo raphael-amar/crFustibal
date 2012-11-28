@@ -110,7 +110,7 @@ define([], function() {
 					panel.append(aDiv);
 				});
 				// panel populate and filled make an animation to the default width
-				panel.parent().show();
+				panel.parent().fadeIn();
 			});
 
 		}

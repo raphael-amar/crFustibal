@@ -1,22 +1,21 @@
 define([], function() {
-	$('img.vimeo').each(function() {
-		var imgElt = $(this);
-		$.getJSON("http://vimeo.com/api/v2/video/" + imgElt.attr('vimeo') + ".json?callback=?", function(data) {
-			imgElt.attr('src', data[0].thumbnail_large);
+	$('video.vimeo').each(function() {
+		var imgElt = this;
+		imgElt.load();
+		$.getJSON("http://vimeo.com/api/v2/video/" + $(this).attr('vimeo') + ".json?callback=?", function(data) {
+			$(imgElt).attr('poster', data[0].thumbnail_large);
 		});
-		imgElt.parent().dblclick(function() {
-			var parElt = $(this).children('iframe');
-			if (parElt[0]) {
-				parElt.remove();
-			} else {
-				var vimeoElt = $(document.createElement("iframe")).attr('src', 'http://player.vimeo.com/video/' + imgElt.attr('vimeo') + '?title=0&portrait=0&byline=0&autoplay=1&api=1');
-				var player = $f($(vimeoElt)[0]);
-				player.addEvent('ready', function() {
-					player.addEvent('finish', function() {
-						$('iframe').remove();
-					});
+		$(imgElt).parent().click(function() {
+			if (imgElt.paused) {
+				$('video.vimeo').each(function() {
+					this.pause();
 				});
-				$(this).append(vimeoElt);
+				$(this).find('svg.icon').fadeOut(2000);
+				imgElt.play();
+			} else {
+				$(this).find('svg.icon').fadeIn(1000);
+				imgElt.pause();
+				imgElt.load();
 			}
 		});
 	});
