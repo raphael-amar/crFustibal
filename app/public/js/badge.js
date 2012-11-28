@@ -74,12 +74,18 @@ define(["lib/jquery.flot.navigate", "lib/jQueryRotate.min", 'lib/jgauge'], funct
 				url : 'http://hdv.bype.org/hdpv.json',
 				dataType : 'json',
 				success : function(data) {
-					gaugeTemp.setValue(data.PAC);
+					if (data.PAC)
+						gaugeTemp.setValue(data.PAC);
+					else
+						gaugeTemp.setValue(0);
+					if (data.DAY_ENERGY)
+						gaugeDay.setValue(data.DAY_ENERGY);
+					else
+						gaugeDay.setValue(0);
 					gaugeRay.setValue(data.RAY);
-					gaugeDay.setValue(data.DAY_ENERGY);
 					setTimeout(updateHDVPVData, 10000);
 				},
-				error : function(){
+				error : function() {
 					setTimeout(updateHDVPVData, 5000);
 				}
 			});
