@@ -3,7 +3,7 @@ define([], function() {
 		// options
 		itemSelector : '.item',
 		mansory : {
-			columnWidth:280
+			columnWidth : 280
 		}
 	}).draggable({
 		axis : "y",
@@ -56,20 +56,40 @@ define([], function() {
 		$('#container').isotope({
 			filter : ''
 		});
+		$('#container').animate({
+			top : 0
+		});
 	})
 	$("#sortnews").click(function() {
 		$('#container').isotope({
 			filter : '.news'
+		});
+		$('#container').animate({
+			top : 0
 		});
 	});
 	$("#sortextern").click(function() {
 		$('#container').isotope({
 			filter : '.extern'
 		});
+		$('#container').animate({
+			top : 0
+		});
 	});
 	$("#sortvideo").click(function() {
 		$('#container').isotope({
 			filter : '.video'
+		});
+		$('#container').animate({
+			top : 0
+		});
+	});
+	$("#sortbadge").click(function() {
+		$('#container').isotope({
+			filter : '.badge'
+		});
+		$('#container').animate({
+			top : 0
 		});
 	});
 });
