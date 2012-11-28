@@ -9,6 +9,7 @@ define([], function() {
 			if (imgElt.paused) {
 				$('video.vimeo').each(function() {
 					this.pause();
+					$(this).parent().find('svg.icon').fadeIn(1000);
 				});
 				$(this).find('svg.icon').fadeOut(2000);
 				imgElt.play();

@@ -39,6 +39,15 @@ define([], function() {
 			});
 		}
 	});
+	function resetIcon() {
+		$('.icon').each(function(index) {
+			$($(this).children()[0]).attr({
+				fill : "#C4C8C5",
+			});
+		});
+	}
+
+
 	$('#collapse').click(function() {
 		var nbi = $('.item').length
 		$('.item').switchClass("activate", "", 500, function() {
@@ -49,7 +58,17 @@ define([], function() {
 		}).css({
 			"z-index" : 0
 		});
-		$('.details').fadeOut();
+		$('video.vimeo').each(function() {
+			this.pause();
+			$(this).parent().find('svg.icon').fadeIn(1000);
+		});
+		$('#container').isotope({
+			filter : ''
+		});
+		$('#container').animate({
+			top : 0
+		});
+		resetIcon();
 	});
 
 	$("#refresh").click(function() {
@@ -59,8 +78,13 @@ define([], function() {
 		$('#container').animate({
 			top : 0
 		});
+		resetIcon();
 	})
 	$("#sortnews").click(function() {
+		resetIcon();
+		$($(this).children()[0]).attr({
+			fill : "#eee",
+		});
 		$('#container').isotope({
 			filter : '.news'
 		});
@@ -69,6 +93,10 @@ define([], function() {
 		});
 	});
 	$("#sortextern").click(function() {
+		resetIcon();
+		$($(this).children()[0]).attr({
+			fill : "#eee"
+		});
 		$('#container').isotope({
 			filter : '.extern'
 		});
@@ -77,6 +105,10 @@ define([], function() {
 		});
 	});
 	$("#sortvideo").click(function() {
+		resetIcon();
+		$($(this).children()[0]).attr({
+			fill : "#eee"
+		});
 		$('#container').isotope({
 			filter : '.video'
 		});
@@ -85,6 +117,10 @@ define([], function() {
 		});
 	});
 	$("#sortbadge").click(function() {
+		resetIcon();
+		$($(this).children()[0]).attr({
+			fill : "#eee"
+		});
 		$('#container').isotope({
 			filter : '.badge'
 		});
