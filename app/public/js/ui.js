@@ -8,15 +8,21 @@ define([], function() {
 	}).draggable({
 		axis : "y",
 		stop : function(event, ui) {
-			if (0 < ui.position.top) {
+			if ($(this).height() < $(window).height()) {
 				$(this).animate({
 					top : 0
 				});
-			}
-			if (ui.position.top < -$(this).height() + $(window).height()) {
-				$(this).animate({
-					top : -$(this).height() + $(window).height()
-				});
+			} else {
+				if (0 < ui.position.top) {
+					$(this).animate({
+						top : 0
+					});
+				}
+				if (ui.position.top < -$(this).height() + $(window).height()) {
+					$(this).animate({
+						top : -$(this).height() + $(window).height()
+					});
+				}
 			}
 		}
 	});
