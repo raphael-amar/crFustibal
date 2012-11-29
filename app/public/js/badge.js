@@ -43,7 +43,7 @@ define(["lib/jquery.flot.navigate", "lib/jQueryRotate.min", 'lib/jgauge'], funct
 		gaugeRay.id = 'gaugeRay';
 		gaugeRay.label.suffix = 'W / m2';
 		gaugeRay.ticks.start = 0;
-		gaugeRay.ticks.end = 500;
+		gaugeRay.ticks.end = 1000;
 		gaugeRay.range.thickness = 0;
 		gaugeRay.range.radius = 0;
 		gaugeRay.init();
@@ -53,7 +53,7 @@ define(["lib/jquery.flot.navigate", "lib/jQueryRotate.min", 'lib/jgauge'], funct
 		gaugeTemp.id = 'gaugeTemp';
 		gaugeTemp.label.suffix = 'W';
 		gaugeTemp.ticks.start = 0;
-		gaugeTemp.ticks.end = 80000;
+		gaugeTemp.ticks.end = 150000;
 		gaugeTemp.range.thickness = 0;
 		gaugeTemp.range.radius = 0;
 		gaugeTemp.init();
@@ -67,6 +67,8 @@ define(["lib/jquery.flot.navigate", "lib/jQueryRotate.min", 'lib/jgauge'], funct
 		gaugeDay.range.thickness = 0;
 		gaugeDay.range.radius = 0;
 		gaugeDay.init();
+
+		var totNrj = $(document.createElement("div")).attr("id", "totnrj").appendTo($('#hdpv'));
 
 		updateHDVPVData();
 		function updateHDVPVData() {
@@ -82,6 +84,8 @@ define(["lib/jquery.flot.navigate", "lib/jQueryRotate.min", 'lib/jgauge'], funct
 						gaugeDay.setValue(data.DAY_ENERGY);
 					else
 						gaugeDay.setValue(0);
+					if (data.TOTAL_ENERGY)
+						$(totNrj).html("Energie totale produite : <b>" + Math.floor(data.TOTAL_ENERGY / 10000)/100 + " mW </b>soit <b>"+ (data.TOTAL_CO2/1000).toFixed(2) +" t </b>de CO2");
 					gaugeRay.setValue(data.RAY);
 					setTimeout(updateHDVPVData, 10000);
 				},
