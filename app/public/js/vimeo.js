@@ -2,9 +2,10 @@ define([], function() {
 	$('video.vimeo').each(function() {
 		var imgElt = this;
 		imgElt.load();
-		$.getJSON("http://vimeo.com/api/v2/video/" + $(this).attr('vimeo') + ".json?callback=?", function(data) {
-			$(imgElt).attr('poster', data[0].thumbnail_large);
-		});
+		if ($(this).attr('vimeo') != "undefined")
+			$.getJSON("http://vimeo.com/api/v2/video/" + $(this).attr('vimeo') + ".json?callback=?", function(data) {
+				$(imgElt).attr('poster', data[0].thumbnail_large);
+			});
 		$(imgElt).parent().click(function() {
 			if (imgElt.paused) {
 				$('video.vimeo').each(function() {
