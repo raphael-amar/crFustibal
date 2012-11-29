@@ -1,19 +1,22 @@
 {
 	"name": "Rongo Rongo Extension",
-	"version": "1.0",
+	"version": "1.1",
 	"background": {
+		"persistent": false,
 		"scripts": ["background.js"]
 	},
-	"permissions": ["webRequest", "tabs", "http://*/*"],
+	"options_page": "options.html",
+	"permissions": ["tabs", "http://*/*"],
 	"browser_action": {
 		"name": "Rongo Rongo Extension"
 	},
-	 "content_scripts" : [{
-        "matches" : [ "http://*/*","https://*/*"],
-        "exclude_matches":["http://fustibal.bype.org/*"],
-        "js" : ["background.js"],
-         "run_at": "document_end"
-    }]
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": ["content.js"],
+			"run_at": "document_end"
+		}
+	]
 	,
 	"manifest_version": 2
 }
