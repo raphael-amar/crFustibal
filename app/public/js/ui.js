@@ -20,7 +20,7 @@ define([], function() {
 			}
 		}
 	});
-	$('.item').click(function() {
+	$('.item').dblclick(function() {
 		if ($(this).hasClass('activate')) {
 			$(this).switchClass("activate", "", 500, function() {
 				$('#container').isotope('reLayout');
