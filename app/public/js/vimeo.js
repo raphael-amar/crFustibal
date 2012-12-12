@@ -11,6 +11,7 @@ define([], function() {
 				$('video.vimeo').each(function() {
 					this.pause();
 					$(this).parent().find('svg.icon').fadeIn(1000);
+					$(this).attr('src','');
 				});
 				$(this).find('svg.icon').fadeOut(2000);
 				$(imgElt).attr('src',$(imgElt).attr('url'));
