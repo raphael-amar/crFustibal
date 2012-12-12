@@ -13,11 +13,12 @@ define([], function() {
 					$(this).parent().find('svg.icon').fadeIn(1000);
 				});
 				$(this).find('svg.icon').fadeOut(2000);
+				$(imgElt).attr('src',$(imgElt).attr('url'));
 				imgElt.play();
 			} else {
 				$(this).find('svg.icon').fadeIn(1000);
 				imgElt.pause();
-				imgElt.load();
+				$(imgElt).attr('src','');
 			}
 		});
 	});
