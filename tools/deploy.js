@@ -16,7 +16,7 @@ var app = {
 		"url" : "git://github.com/davidonet/crFustibal.git"
 	},
 	"scripts" : {
-		"start" : "app/fustibal.js"
+		"start" : "fustibal.js"
 	}
 };
 
