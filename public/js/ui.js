@@ -134,4 +134,14 @@ define([], function() {
 			top : 0
 		});
 	});
+	$("#info,#infobox").click(function() {
+		$('#darkscreen').fadeToggle(200, function() {
+			$('#infobox').toggle(500);
+		});
+	});
+	$("#help,#helpbox").click(function() {
+		$('#darkscreen').fadeToggle(200, function() {
+			$('#helpbox').toggle(500);
+		});
+	});
 });

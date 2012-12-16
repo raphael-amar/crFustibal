@@ -8,7 +8,7 @@ require(["jquery", "jquery-ui", "lib/jquery.isotope", 'froog', "lib/jquery.flot"
 	$(function() {
 
 		require(["ui"]);
-		//require(["help"]);
+		require(["help"]);
 		require(["news"]);
 		require(["vimeo"]);
 		require(["badge"], function(badge) {
