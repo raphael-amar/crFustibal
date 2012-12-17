@@ -1,6 +1,6 @@
 define(["lib/jquery.flot.navigate", "lib/jQueryRotate.min", 'lib/jgauge'], function() {
 	function updateAirLRData() {
-		$.getJSON('data/airlr.json', function(data) {
+		$.getJSON('http://http.bype.org/data/airlr.json', function(data) {
 			var last = new Date();
 			last.setDate(last.getDate() - 10);
 			var end = data.data[data.data.length-1][0];

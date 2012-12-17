@@ -3,7 +3,7 @@
  */
 
 var mongo = require('mongoskin');
-var db = mongo.db("mongodb://dbserver/fustibal", {
+var db = mongo.db("mongodb://127.0.0.1/fustibal", {
 	safe : false
 })
 db.bind('apps');
