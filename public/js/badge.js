@@ -101,7 +101,7 @@ define(["lib/jquery.flot.navigate", "lib/jQueryRotate.min", 'lib/jgauge'], funct
 	return {
 		init : function() {
 			initHDVPV();
-			setTimeout(updateAirLRData,5000);
+			updateAirLRData();
 		}
 	};
 });
