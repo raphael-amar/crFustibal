@@ -82,7 +82,7 @@ define([], function() {
 					var img = " ";
 					var content = $item.children('content\\:encoded').text();
 					var contentNorm = $(content.replace("<![CDATA[", "").replace("]]>", ""));
-					
+
 					var pubDate = $item.find('pubDate').text();
 					var aDiv = $(document.createElement("div")).addClass('entry');
 					$(document.createElement("h2")).addClass('postTitle').append(title).appendTo(aDiv);
@@ -91,20 +91,20 @@ define([], function() {
 					var desc = $(document.createElement("div")).addClass('description').appendTo(aDiv);
 					$(desc).html(contentNorm);
 
-					$(desc).find('img').each(function(i,e) {						
+					$(desc).find('img').each(function(i, e) {
 						e.setAttribute('class', 'feedImg')
 						e.removeAttribute('style');
 					});
-					$(desc).find('p,span,div,h1,h2,h3,h4,ul,li').each(function(i,e) {						
+					$(desc).find('p,span,div,h1,h2,h3,h4,ul,li').each(function(i, e) {
 						e.removeAttribute('class');
 						e.removeAttribute('style');
 					});
-					$(desc).find('a').each(function(i,e) {						
+					$(desc).find('a').each(function(i, e) {
 						e.removeAttribute('class');
 						e.removeAttribute('style');
 						e.removeAttribute('href');
 					});
-
+					$(desc).find('object').empty();
 					$(document.createElement("hr")).appendTo(aDiv);
 					//put that feed content on the screen!
 					panel.append(aDiv);

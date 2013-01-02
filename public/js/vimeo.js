@@ -11,15 +11,17 @@ define([], function() {
 				$('video.vimeo').each(function() {
 					this.pause();
 					$(this).parent().find('svg.icon').fadeIn(1000);
-					$(this).attr('src','');
+					$(this).attr('src', '');
 				});
 				$(this).find('svg.icon').fadeOut(2000);
-				$(imgElt).attr('src',$(imgElt).attr('url'));
-				imgElt.play();
+				$.getJSON("getvimeourl/" + $(imgElt).attr('vimeo'), function(data) {
+					$(imgElt).attr('src', data.url);
+					imgElt.play();
+				});
 			} else {
 				$(this).find('svg.icon').fadeIn(1000);
 				imgElt.pause();
-				$(imgElt).attr('src','');
+				$(imgElt).attr('src', '');
 			}
 		});
 	});
