@@ -85,7 +85,7 @@ define(["lib/jquery.flot.navigate", "lib/jQueryRotate.min", 'lib/jgauge'], funct
 					else
 						gaugeDay.setValue(0);
 					if (data.TOTAL_ENERGY)
-						$(totNrj).html("Energie totale produite : <b>" + Math.floor(data.TOTAL_ENERGY / 10000)/100 + " mW </b>soit <b>-"+ (data.TOTAL_CO2/1000).toFixed(2) +" t </b>de CO2");
+						$(totNrj).html("Energie totale produite : <b>" + Math.floor(data.TOTAL_ENERGY / 10000) / 100 + " mW </b>soit <b>-" + (data.TOTAL_CO2 / 1000).toFixed(2) + " t </b>de CO2");
 					gaugeRay.setValue(data.RAY);
 					setTimeout(updateHDVPVData, 10000);
 				},
@@ -100,7 +100,11 @@ define(["lib/jquery.flot.navigate", "lib/jQueryRotate.min", 'lib/jgauge'], funct
 
 	return {
 		init : function() {
-			initHDVPV();
+			try {
+				initHDVPV();
+			} catch(err) {
+				console.log("error initializing realtime energy log");
+			}
 			updateAirLRData();
 		}
 	};

@@ -6,19 +6,18 @@ requirejs.config({
 });
 require(["jquery", "jquery-ui", "lib/jquery.isotope", 'froog', "lib/jquery.flot"], function($) {
 	$(function() {
-		$(document).ready(function() {
-			require(["ui"]);
-			require(["help"]);
-			require(["news"]);
-			require(["vimeo"]);
-			require(["badge"], function(badge) {
-				badge.init();
-				$('.item').show();
-			});
-			try {
-				clicky.init(100559275);
-			} catch(e) {
-			}
+
+		require(["ui"]);
+		require(["help"]);
+		require(["news"]);
+		require(["vimeo"]);
+		require(["badge"], function(badge) {
+			badge.init();
 		});
+		$('.item').show();
+		try {
+			clicky.init(100559275);
+		} catch(e) {
+		}
 	});
 });
