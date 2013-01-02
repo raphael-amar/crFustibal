@@ -15,35 +15,24 @@ db.bind('apps');
 db.bind('layout');
 
 exports.index = function(req, res) {
-	if (req.params.layout != "default") {
-		db.layout.findOne({
-			name : req.params.layout
-		}, function(err, data) {
-			data.modulelist = [];
-			async.forEach(data.modules, function(aMod, done) {
-				db.apps.findOne({
-					_id : new db.apps.ObjectID(aMod)
-				}, function(err, app) {
-					data.modulelist.push(app);
-					done();
-				})
-			}, function(err) {
-				res.render('index', {
-					title : 'fustibal - Montpellier Territoire Numérique',
-					apps : data.modulelist
-				});
-			});
-		});
-	} else {
-		db.apps.find({}).toArray(function(err, data) {
-			if (req.query.place == 'ot')
-				data[6].url = 'http://boussole.mandarine34.fr/?tuio=true&noLinks=true&location=ot_mtp';
+	db.layout.findOne({
+		name : req.params.layout
+	}, function(err, data) {
+		data.modulelist = [];
+		async.forEach(data.modules, function(aMod, done) {
+			db.apps.findOne({
+				_id : new db.apps.ObjectID(aMod)
+			}, function(err, app) {
+				data.modulelist.push(app);
+				done();
+			})
+		}, function(err) {
 			res.render('index', {
 				title : 'fustibal - Montpellier Territoire Numérique',
-				apps : data
+				apps : data.modulelist
 			});
 		});
-	}
+	});
 };
 
 exports.getimg = function(req, res, next) {
