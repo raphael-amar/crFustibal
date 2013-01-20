@@ -7,7 +7,7 @@ var express = require('express'), routes = require('./routes'), http = require('
 var app = express();
 
 app.configure(function() {
-	app.set('port', 5040);
+	app.set('port', 5060);
 	app.set('views', __dirname + '/views');
 	app.set('view engine', 'jade');
 	app.use(express.favicon());
@@ -26,10 +26,7 @@ app.configure('development', function() {
 });
 
 app.get('/', function(req, res) {
-	if (req.query.place == 'ot')
-		res.redirect('/otm');
-	else
-		res.redirect('/default');
+	res.redirect('/default');
 });
 app.get('/:layout', routes.index);
 app.get('/getimg/:name', routes.getimg);

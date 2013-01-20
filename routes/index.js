@@ -5,7 +5,7 @@
 var Browser = require("zombie");
 var http = require('http');
 var mongo = require('mongoskin');
-var db = mongo.db("mongodb://dbserver/fustibal", {
+var db = mongo.db("mongodb://dbserver/bypelabs", {
 	safe : false
 })
 

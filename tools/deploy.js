@@ -9,11 +9,13 @@ var client = new haibu.drone.Client({
 // A basic package.json for a node.js application on haibu
 var app = {
 	"user" : "dolivari",
-	"name" : "fustibal",
+	"name" : "fustibal-bypelabs",
 	"domain" : "bype.org",
 	"repository" : {
 		"type" : "git",
-		"url" : "git://github.com/davidonet/crFustibal.git"
+		"url" : "git://github.com/Bype/crFustibal.git",
+		"branch" : "bypelabs"
+		
 	},
 	"scripts" : {
 		"start" : "fustibal.js"
