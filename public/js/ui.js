@@ -1,4 +1,5 @@
 define([], function() {
+	var timeOutFn;
 	$('#container').isotope({
 		// options
 		itemSelector : '.item',
@@ -7,6 +8,9 @@ define([], function() {
 		}
 	}).draggable({
 		axis : "y",
+		start : function(event, ui) {
+			$.dragMoving = true;
+		},
 		stop : function(event, ui) {
 			if ($(this).height() < $(window).height()) {
 				$(this).animate({
@@ -24,25 +28,31 @@ define([], function() {
 					});
 				}
 			}
+			window.clearTimeout(timeOutFn);
+			timeOutFn = setTimeout(function() {
+				$.dragMoving = false;
+			}, 500);
 		}
 	});
-	$('.item').dblclick(function() {
-		if ($(this).hasClass('activate')) {
-			$(this).switchClass("activate", "", 500, function() {
-				$('#container').isotope('reLayout');
-			});
-			$(this).css({
-				"z-index" : 0
-			});
+	$('.item').click(function() {
+		if (!$.dragMoving) {
+			if ($(this).hasClass('activate')) {
+				$(this).switchClass("activate", "", 500, function() {
+					$('#container').isotope('reLayout');
+				});
+				$(this).css({
+					"z-index" : 0
+				});
 
-		} else {
-			$(this).css({
-				"z-index" : 100
-			});
+			} else {
+				$(this).css({
+					"z-index" : 100
+				});
 
-			$(this).switchClass("", "activate", 500, function() {
-				$('#container').isotope('reLayout');
-			});
+				$(this).switchClass("", "activate", 500, function() {
+					$('#container').isotope('reLayout');
+				});
+			}
 		}
 	});
 	function resetIcon() {
@@ -144,4 +154,8 @@ define([], function() {
 			$('#helpbox').toggle(500);
 		});
 	});
+	$.openExtLink = function(url) {
+		if (!$.dragMoving)
+			document.location = url;
+	}
 });

@@ -4,8 +4,8 @@ block content
 	div#content
 		div#container
 			for i in apps
-				- var urlclick=(i.url?'document.location="'+i.url+'"':undefined)
-				div.item(class='#{i.type}',ondblclick=urlclick)
+				- var urlclick=(i.url?'$.openExtLink("'+i.url+'")':undefined)
+				div.item(class='#{i.type}',onclick=urlclick)
 					h1 #{i.title}
 					p.details #{i.headline}		
 					if i.logo
