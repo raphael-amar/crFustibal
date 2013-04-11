@@ -62,7 +62,7 @@ exports.getVimeoURL = function(req, res, next) {
 		var time = player.config.request.timestamp;
 		var sig = player.config.request.signature;
 		var clip_id = browser.window.location.href.substring(17);
-		var path = "/play_redirect" + "?clip_id=" + clip_id + "&sig=" + sig + "&time=" + time+"&quality=hd&codecs=H264,VP8,VP6&type=moogaloop_local";
+		var path = "/play_redirect" + "?clip_id=" + clip_id + "&sig=" + sig + "&time=" + time+"&quality=sd&codecs=H264,VP8,VP6&type=moogaloop_local";
 		console.log(path);
 		var options = {
 			host : 'player.vimeo.com',
