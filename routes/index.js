@@ -5,7 +5,7 @@
 var Browser = require("zombie");
 var http = require('http');
 var mongo = require('mongoskin');
-var db = mongo.db("mongodb://cloud.bype.org/fustibal", {
+var db = mongo.db("mongodb://dbserver/fustibal", {
 	safe : false
 })
 
@@ -23,7 +23,8 @@ exports.index = function(req, res) {
 			db.apps.findOne({
 				_id : new db.apps.ObjectID(aMod)
 			}, function(err, app) {
-				data.modulelist.push(app);
+				if (!err && app)
+					data.modulelist.push(app);
 				done();
 			})
 		}, function(err) {
@@ -62,7 +63,7 @@ exports.getVimeoURL = function(req, res, next) {
 		var time = player.config.request.timestamp;
 		var sig = player.config.request.signature;
 		var clip_id = browser.window.location.href.substring(17);
-		var path = "/play_redirect" + "?clip_id=" + clip_id + "&sig=" + sig + "&time=" + time+"&quality=sd&codecs=H264,VP8,VP6&type=moogaloop_local";
+		var path = "/play_redirect" + "?clip_id=" + clip_id + "&sig=" + sig + "&time=" + time + "&quality=sd&codecs=H264,VP8,VP6&type=moogaloop_local";
 		console.log(path);
 		var options = {
 			host : 'player.vimeo.com',
@@ -78,5 +79,6 @@ exports.getVimeoURL = function(req, res, next) {
 				url : response.headers.location
 			});
 		}).end();
+
 	});
 };
