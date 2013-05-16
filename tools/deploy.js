@@ -13,7 +13,7 @@ var app = {
 	"domain" : "bype.org",
 	"repository" : {
 		"type" : "git",
-		"url" : "git://github.com/davidonet/crFustibal.git"
+		"url" : "git://github.com/Bype/crFustibal.git"
 	},
 	"scripts" : {
 		"start" : "fustibal.js"
