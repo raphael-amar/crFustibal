@@ -34,6 +34,7 @@ app.get('/', function(req, res) {
 app.get('/:layout', routes.index);
 app.get('/getimg/:name', routes.getimg);
 app.get('/getvimeourl/:vimeoid', routes.getVimeoURL);
+app.get('/getvimeourlhd/:vimeoid', routes.getVimeoURLHD);
 
 http.createServer(app).listen(app.get('port'), function() {
 	console.log("Express server listening on port " + app.get('port'));
